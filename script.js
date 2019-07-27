@@ -76,12 +76,10 @@ class Timer {
                         this.line.style.width = "0%";
                     }
 
-                    if (this.options.seconds == 0 && this.options.minutes > 0) {
-                        this.options.seconds = 60;
+                    if (this.options.seconds <= 0 && this.options.minutes > 0) {
                         this.options.minutes--;
-                    }
-
-
+                        this.options.seconds = 60;
+                    } 
 
                     if (this.options.minutes < 10 && this.options.seconds < 10) {
                         this.divTimer.innerHTML = `0${this.options.minutes} : 0${this.options.seconds}`;
@@ -98,7 +96,7 @@ class Timer {
                     }
                 }, this.options.interval * 1000);
 
-            if (this.options.seconds < this.options.interval) {
+            if (this.options.seconds < this.options.interval && this.options.minutes == 0) {
                 alert("Time is less than the interval!");
             }
         }
