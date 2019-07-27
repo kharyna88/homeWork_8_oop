@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomeWork 8 Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+ 
+<div class="timer_intervals">
+
+        <label for="minutes">minutes:</label>
+        <input type="number" class=" center" id="minutes" name="minutes" value=0 min=0 max=99>
+        <label for="seconds">seconds:</label>
+        <input type="number" class=" center" id="seconds" name="seconds" value=15 min=0 max=99>
+        
+        <label for="intervals">intervals:</label>
+    <select class="position center" name="intervals" id="interval">
+        <option value="1">1 second</option>
+        <option value="2">2 seconds</option>
+        <option value="5">5 seconds</option>
+        <option value="10">10 seconds</option>
+    </select>
+
+    <input type="checkbox" id="autoStart" name="auto_start" value=" ">
+    <label for="auto_start">Auto start</label>
+
+    <button class="position button_create">Create</button>
+
+</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
