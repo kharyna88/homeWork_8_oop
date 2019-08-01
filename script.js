@@ -51,7 +51,7 @@ class Timer {
 
         this.options.allLine = (this.options.minutes * 60) + this.options.seconds;
         this.options.lineWidth = 100 / this.options.allLine;
-        console.log(this.options.lineWidth);
+        //console.log(this.options.lineWidth);
 
         return line;
 
@@ -77,9 +77,14 @@ class Timer {
                     }
 
                     if (this.options.seconds <= 0 && this.options.minutes > 0) {
-                        this.options.minutes--;
-                        this.options.seconds = 60;
-                    } 
+                        this.options.seconds = 0;
+
+                        setTimeout(function () {
+                            this.options.minutes--;
+                            this.options.seconds = 60;
+                        }.bind(this), 1);
+
+                    }
 
                     if (this.options.minutes < 10 && this.options.seconds < 10) {
                         this.divTimer.innerHTML = `0${this.options.minutes} : 0${this.options.seconds}`;
@@ -146,14 +151,14 @@ button.addEventListener("click", function () {
 
 });
 
-new Timer ({
+new Timer({
     minutes: 0,
     seconds: 15,
     interval: 1,
-    autoStart: false   
-}); 
+    autoStart: false
+});
 
-new Timer ({
+new Timer({
     minutes: 5,
     seconds: 30,
     interval: 2,
